@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 import React, { useState } from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
-const EmergencyDonor = () => {
+const NearbyDonor = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredDonors, setFilteredDonors] = useState([]);
     const navigation = useNavigation();
@@ -37,7 +37,7 @@ const EmergencyDonor = () => {
     const donorsToDisplay = filteredDonors.length > 0 ? filteredDonors : donors;
 
     const handleCardPress = (donor) => {
-        navigation.navigate('DonorDetails', { donor });
+        navigation.navigate('LocationNearBy', { donor });
     };
 
     return (
@@ -46,23 +46,23 @@ const EmergencyDonor = () => {
                 <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
                     <AntDesign name="left" size={24} color="#0F0C20" />
                 </TouchableOpacity>
-                <Text style={styles.screenName}>Find Donor</Text>
+                <Text style={styles.screenName}>Nearby Donors</Text>
             </View>
 
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Search For emergency donor"
+                    placeholder="Search For donor"
                     placeholderTextColor="#73737B"
                     value={searchQuery}
                     onChangeText={handleSearch}
                 />
                 <TouchableOpacity style={styles.filterButton}>
-                    <AntDesign name="filter" size={20} color="#FFF" />
+                    <Ionicons name="notifications-outline" size={20} color="#000000" />
                 </TouchableOpacity>
             </View>
 
-            <Text style={styles.DonorList}>Donor List:-</Text>
+            <Text style={styles.DonorList}>Donor List:</Text>
 
             <ScrollView>
                 {donorsToDisplay.map((donor) => (
@@ -81,12 +81,12 @@ const EmergencyDonor = () => {
                                 </View>
                             </View>
                             <View style={styles.actionContainer}>
-                                <TouchableOpacity style={styles.bloodGroupButton}>
-                                    <MaterialIcons name="call" size={20} color="#3FA636" />
+                                <TouchableOpacity>
+                                    <Text style={styles.Online}>Online</Text>
                                 </TouchableOpacity>
-                                <View style={styles.callButton}>
+                                <ImageBackground style={styles.callButton} source={require('../../Assets/Image/Cover.png')}>
                                     <Text style={styles.bloodGroupText}>{donor.bloodGroup}</Text>
-                                </View>
+                                </ImageBackground>
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -96,7 +96,7 @@ const EmergencyDonor = () => {
     );
 };
 
-export default EmergencyDonor;
+export default NearbyDonor;
 
 const styles = StyleSheet.create({
     container: {
@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 20,
-        color: "#73737B",
         borderRadius: 8,
         paddingLeft: 10,
         borderColor: '#E3E3E3',
@@ -136,8 +135,8 @@ const styles = StyleSheet.create({
         color: '#0F0C20',
     },
     filterButton: {
-        backgroundColor: '#E21629',
-        borderRadius: 8,
+        // backgroundColor: '#E21629',
+        // borderRadius: 8,
         justifyContent: "center",
         alignItems: "center",
         height: 48,
@@ -193,23 +192,12 @@ const styles = StyleSheet.create({
         gap: 10,
     },
     callButton: {
-        backgroundColor: '#E21629',
-        borderRadius: 8,
         justifyContent: "center",
         alignItems: "center",
-        marginRight: 10,
         width: 32,
-        height: 32,
+        height: 37,
         marginLeft: 10,
-    },
-    bloodGroupButton: {
-        borderColor: '#ABABB4',
-        borderWidth: 1,
-        borderRadius: 8,
-        justifyContent: "center",
-        alignItems: "center",
-        width: 32,
-        height: 32,
+        overflow: 'hidden',
     },
     bloodGroupText: {
         color: '#FFFFFF',
@@ -221,5 +209,10 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "600",
         paddingBottom: 20,
+    },
+    Online: {
+        color: "#3FA636",
+        fontSize: 15,
+        fontWeight: "400",
     },
 });

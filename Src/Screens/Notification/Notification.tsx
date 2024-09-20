@@ -10,14 +10,14 @@ const notifications = [
         profileImage: require('../../Assets/Image/Profile.png'),
         name: 'John Doe',
         text: 'You got a blood request near jutial area.',
-        date: '2024-08-09',
+        date: '2024-08-30',
     },
     {
         id: '2',
         profileImage: require('../../Assets/Image/Profile.png'),
         name: 'Jane Smith',
         text: 'You got a blood request near jutial area.',
-        date: '2024-08-08',
+        date: '2024-08-31',
     },
 ];
 

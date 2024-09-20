@@ -49,7 +49,7 @@ const LocationScreen = () => {
     const navigation = useNavigation();
 
     const handleCardPress = (location) => {
-        navigation.navigate('Detail', { location });
+        navigation.navigate('LocatonDetail', { location });
     };
 
     return (

@@ -118,13 +118,13 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     headerTitle: {
-        color: "#0F0C20",
+        color: "#FFF",
         fontSize: 24,
         fontWeight: "500",
         textAlign: 'center',
     },
     ShareBox: {
-        backgroundColor: "#19BFB5",
+        backgroundColor: "#E21629",
         width: 37,
         height: 37,
         borderRadius: 50,

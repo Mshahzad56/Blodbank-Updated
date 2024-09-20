@@ -7,7 +7,7 @@ const Successfull = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigation.navigate('HomeScreen');
+            navigation.navigate('BottomNavigation');
         }, 3000);
 
 

@@ -27,8 +27,19 @@ import SettingScreen from '../Src/Screens/SettingScreens/SettingScreen';
 import Password from '../Src/Screens/Password/Password';
 import ProfileView from '../Src/Screens/Profile/ProfileView';
 import Invitefriends from '../Src/Screens/Invitefriends/Invitefriends';
-
-
+import HomeProfile from '../Src/Screens/HomeProfile/HomeProfile';
+import SentRequest from '../Src/Screens/SentRequest/SentRequest';
+import BottomNavigation from './BottomNavigation';
+import NearbyDonor from '../Src/Screens/SentRequest/NearbyDonor';
+import BloodDonate from "../Src/Screens/SentRequest/BloodDonate"
+import ManageAddress from '../Src/Screens/ManageAddress/ManageAddress';
+import ProfileCreate from '../Src/Screens/ProfileCreate/ProfileCreate';
+import Notificationsetting from '../Src/Screens/Notification/Notificationsetting';
+import Compatibility from '../Src/Screens/Compatibility/Compatibility';
+import PaymentMethod from '../Src/Screens/Payment/PaymentMethod';
+import AddCard from '../Src/Screens/Payment/AddCard';
+import LocatonDetail from '../Src/Screens/Location/LocatonDetail';
+import LocationNearBy from '../Src/Screens/SentRequest/LocationNearBy';
 
 
 
@@ -36,7 +47,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="ChatListScreen">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SpalishOne">
             <Stack.Screen name="SpalishOne" component={SpalishOne} />
             <Stack.Screen name="SpalishTwo" component={SpalishTwo} />
             <Stack.Screen name="SpalishThree" component={SpalishThree} />
@@ -49,6 +60,7 @@ const StackNavigation = () => {
             <Stack.Screen name="Questionnaires" component={Questionnaires} />
             <Stack.Screen name="PersonalDetails" component={PersonalDetails} />
             <Stack.Screen name="Successfull" component={Successfull} />
+            <Stack.Screen name="BottomNavigation" component={BottomNavigation} />
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="Profile" component={Profile} />
             <Stack.Screen name="VideoCall" component={VideoCall} />
@@ -62,8 +74,11 @@ const StackNavigation = () => {
             <Stack.Screen name="ChatListScreen" component={ChatListScreen} />
             <Stack.Screen name="SettingScreen" component={SettingScreen} />
             <Stack.Screen name="Password" component={Password} />
-            <Stack.Screen name="ProfileView" component={ProfileView} />
-            <Stack.Screen name="Invitefriends" component={Invitefriends} />
+            <Stack.Screen name="HomeProfile" component={HomeProfile} />
+            <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+            <Stack.Screen name="AddCard" component={AddCard} />
+            <Stack.Screen name="LocatonDetail" component={LocatonDetail} />
+            <Stack.Screen name="LocationNearBy" component={LocationNearBy} />
         </Stack.Navigator>
     );
 };

@@ -66,7 +66,7 @@ const Questionnaires = () => {
                     />
                     <Text style={styles.CheckText}>By clicking, you agree to our terms and conditions.</Text>
                 </View>
-                <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate('PersonalDetails')} >
+                <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate('HomeProfile')} >
                     <Text style={styles.submitButtonText}>Become a donor</Text>
                 </TouchableOpacity>
             </View>
@@ -141,4 +141,5 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         marginLeft: 10,
     },
+
 });

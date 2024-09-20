@@ -4,9 +4,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { useNavigation } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { ColorEnhanceOptions } from 'react-native-agora';
 
-const HomeScreen = () => {
+const HomeScreenPaid = () => {
     const [cardData, setCardData] = useState([
         {
             id: '1',
@@ -211,11 +210,11 @@ const HomeScreen = () => {
                 </View>
                 {/* Active Buttons  */}
                 <View style={styles.ActiveButtonsOuter}>
-                    <TouchableOpacity style={styles.BloodButton}>
-                        <Text style={styles.PaidText}>Blood Bank</Text>
+                    <TouchableOpacity style={styles.PaidBlood} onPress={() => navigation.navigate('HomeScreen')}>
+                        <Text style={styles.nonPaidText}>Blood Bank</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('HomeScreenPaid')} style={styles.PaidBlood}>
-                        <Text style={styles.nonPaidText} >Paid Blood</Text>
+                    <TouchableOpacity style={styles.BloodButton}>
+                        <Text style={styles.PaidText}>Paid Blood</Text>
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.ProfessionText}>Available Blood:</Text>
@@ -309,7 +308,7 @@ const HomeScreen = () => {
     );
 };
 
-export default HomeScreen;
+export default HomeScreenPaid;
 
 const styles = StyleSheet.create({
     Container: {
@@ -591,6 +590,5 @@ const styles = StyleSheet.create({
         color: "#FFF",
         fontSize: 24,
         fontWeight: "500",
-    }
-
+    },
 });
